@@ -1,0 +1,229 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.String?>
+<?import javafx.collections.FXCollections?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ToggleButton?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Circle?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="470.0" prefWidth="684.0" style="-fx-background-color: #fff;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="home.SelectScheduleController">
+   <children>
+      <VBox alignment="TOP_CENTER" prefHeight="576.0" prefWidth="256.0" style="-fx-background-color: #EBE8F9;" AnchorPane.bottomAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <ImageView fitHeight="73.0" fitWidth="67.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../images/jimmy-fallon.png" />
+               </image>
+               <VBox.margin>
+                  <Insets bottom="10.0" top="50.0" />
+               </VBox.margin></ImageView>
+            <Label fx:id="UserName" text="Jimmy Fallon">
+               <VBox.margin>
+                  <Insets bottom="20.0" />
+               </VBox.margin>
+            </Label>
+            <Button fx:id="Home" alignment="BASELINE_LEFT" graphicTextGap="22.0" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="42.0" prefWidth="259.0" stylesheets="@style.css" text="Home">
+               <graphic>
+                  <ImageView fitHeight="23.0" fitWidth="27.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../images/icons8_Home_32px.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+               <VBox.margin>
+                  <Insets />
+               </VBox.margin>
+               <padding>
+                  <Insets left="50.0" />
+               </padding>
+            </Button>
+            <Button alignment="BASELINE_LEFT" graphicTextGap="22.0" mnemonicParsing="false" prefHeight="42.0" prefWidth="259.0" stylesheets="@style.css" text="Select Between Classes">
+               <graphic>
+                  <ImageView fitHeight="23.0" fitWidth="27.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../images/icons8_Box_32px.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <padding>
+                  <Insets left="50.0" />
+               </padding>
+            </Button>
+            <Button fx:id="GoCustom" alignment="BASELINE_LEFT" graphicTextGap="22.0" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="42.0" prefWidth="259.0" stylesheets="@style.css" text="Customers Schedule">
+               <graphic>
+                  <ImageView fitHeight="23.0" fitWidth="27.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../images/icons8_Person_32px.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <padding>
+                  <Insets left="50.0" />
+               </padding>
+            </Button>
+            <Button fx:id="GoPrint" alignment="BASELINE_LEFT" graphicTextGap="22.0" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="42.0" prefWidth="259.0" stylesheets="@style.css" text="Print Between Classes">
+               <graphic>
+                  <ImageView fitHeight="23.0" fitWidth="27.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../images/icons8_Xbox_Menu_32px.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <padding>
+                  <Insets left="50.0" />
+               </padding>
+            </Button>
+            <Button fx:id="SignOut" alignment="BASELINE_LEFT" graphicTextGap="22.0" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="42.0" prefWidth="259.0" stylesheets="@style.css" text="Sign Out">
+               <graphic>
+                  <ImageView fitHeight="23.0" fitWidth="27.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../images/icons8_Sign_Out_32px.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <padding>
+                  <Insets left="50.0" />
+               </padding>
+            </Button>
+         </children>
+      </VBox>
+      <HBox layoutX="18.0" layoutY="18.0" spacing="5.0">
+         <children>
+            <Circle fx:id="btnClose" fill="#fc5d57" onMouseClicked="#handleMouseEvent" radius="6.0" stroke="WHITE" strokeType="INSIDE" />
+            <Circle fill="#fdbb2d" radius="6.0" stroke="WHITE" strokeType="INSIDE" />
+            <Circle fill="#27c941" radius="6.0" stroke="WHITE" strokeType="INSIDE" />
+         </children>
+      </HBox>
+      <Pane fx:id="select" layoutX="258.0" layoutY="37.0" prefHeight="400.0" prefWidth="419.0" style="-fx-background-color: #fff;">
+         <children>
+            <Button fx:id="clientroom" layoutX="352.0" layoutY="356.0" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="19.0" prefWidth="67.0" styleClass="button1" stylesheets="@fullpackstyling.css" text="확인">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Button>
+            <Label layoutX="46.0" layoutY="64.0" text="요일 (필수)" />
+            <Label layoutX="46.0" layoutY="138.0" text="건물 (필수)" />
+            <Label layoutX="46.0" layoutY="219.0" text="층수 (필수)" />
+            <Label layoutX="46.0" layoutY="285.0" text="시간선택 (필수)" />
+            <ToggleButton fx:id="mon" layoutX="46.0" layoutY="87.0" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="19.0" prefWidth="57.0" styleClass="button2" stylesheets="@fullpackstyling.css" text="월">
+               <font>
+                  <Font size="15.0" />
+               </font>
+               <toggleGroup>
+                  <ToggleGroup fx:id="day" />
+               </toggleGroup>
+            </ToggleButton>
+            <ToggleButton fx:id="tue" layoutX="103.0" layoutY="88.0" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="24.0" prefWidth="57.0" styleClass="button2" stylesheets="@fullpackstyling.css" text="화" toggleGroup="$day">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </ToggleButton>
+            <ToggleButton fx:id="wed" layoutX="160.0" layoutY="87.0" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="19.0" prefWidth="57.0" styleClass="button2" stylesheets="@fullpackstyling.css" text="수" toggleGroup="$day">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </ToggleButton>
+            <ToggleButton fx:id="thu" layoutX="217.0" layoutY="87.0" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="19.0" prefWidth="57.0" styleClass="button2" stylesheets="@fullpackstyling.css" text="목" toggleGroup="$day">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </ToggleButton>
+            <ToggleButton fx:id="fri" layoutX="274.0" layoutY="87.0" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="13.0" prefWidth="57.0" styleClass="button2" stylesheets="@fullpackstyling.css" text="금" toggleGroup="$day">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </ToggleButton>
+            <ToggleButton fx:id="human" layoutX="46.0" layoutY="159.0" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="39.0" prefWidth="81.0" styleClass="button2" stylesheets="@fullpackstyling.css" text="인문관">
+               <font>
+                  <Font size="15.0" />
+               </font>
+               <toggleGroup>
+                  <ToggleGroup fx:id="place" />
+               </toggleGroup>
+            </ToggleButton>
+            <ToggleButton fx:id="engineer" layoutX="133.0" layoutY="159.0" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="39.0" prefWidth="81.0" styleClass="button2" stylesheets="@fullpackstyling.css" toggleGroup="$place">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </ToggleButton>
+            <ToggleButton fx:id="main" layoutX="219.0" layoutY="159.0" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="39.0" prefWidth="81.0" styleClass="button2" stylesheets="@fullpackstyling.css" toggleGroup="$place">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </ToggleButton>
+            <ToggleButton fx:id="1F" layoutX="46.0" layoutY="240.0" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="19.0" prefWidth="57.0" styleClass="button2" stylesheets="@fullpackstyling.css" text="1층">
+               <font>
+                  <Font size="15.0" />
+               </font>
+               <toggleGroup>
+                  <ToggleGroup fx:id="floor" />
+               </toggleGroup>
+            </ToggleButton>
+            <ToggleButton fx:id="2F" layoutX="103.0" layoutY="240.0" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="20.0" prefWidth="57.0" styleClass="button2" stylesheets="@fullpackstyling.css" text="2층" toggleGroup="$floor">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </ToggleButton>
+            <ToggleButton fx:id="3F" layoutX="160.0" layoutY="240.0" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="19.0" prefWidth="57.0" styleClass="button2" stylesheets="@fullpackstyling.css" text="3층" toggleGroup="$floor">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </ToggleButton>
+            <ToggleButton fx:id="4F" layoutX="217.0" layoutY="240.0" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="19.0" prefWidth="57.0" styleClass="button2" stylesheets="@fullpackstyling.css" text="4층" toggleGroup="$floor">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </ToggleButton>
+            <ToggleButton fx:id="5F" layoutX="274.0" layoutY="240.0" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="25.0" prefWidth="57.0" styleClass="button2" stylesheets="@fullpackstyling.css" text="5층" toggleGroup="$floor">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </ToggleButton>
+            <ChoiceBox fx:id="time1" layoutX="46.0" layoutY="313.0" prefWidth="150.0">
+               <items>
+                  <FXCollections fx:factory="observableArrayList">
+                     <String fx:value="1교시" />
+                     <String fx:value="2교시" />
+                     <String fx:value="3교시" />
+                     <String fx:value="4교시" />
+                     <String fx:value="5교시" />
+                     <String fx:value="6교시" />
+                     <String fx:value="7교시" />
+                     <String fx:value="8교시" />
+                     <String fx:value="9교시" />
+                  </FXCollections>
+               </items>
+            </ChoiceBox>
+            <ChoiceBox fx:id="time2" layoutX="214.0" layoutY="313.0" prefWidth="150.0">
+               <items>
+                  <FXCollections fx:factory="observableArrayList">
+                     <String fx:value="1교시" />
+                     <String fx:value="2교시" />
+                     <String fx:value="3교시" />
+                     <String fx:value="4교시" />
+                     <String fx:value="5교시" />
+                     <String fx:value="6교시" />
+                     <String fx:value="7교시" />
+                     <String fx:value="8교시" />
+                     <String fx:value="9교시" />
+                  </FXCollections>
+               </items>
+            </ChoiceBox>
+         </children>
+      </Pane>
+   </children>
+</AnchorPane>

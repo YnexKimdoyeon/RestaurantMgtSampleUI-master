@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.shape.Circle?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" fx:id="parent" prefHeight="520.0" prefWidth="800.0" styleClass="parent" stylesheets="@../MyFxml/Stylesheet.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="home.SignUpController">
+   <children>
+      <Pane fx:id="content" layoutY="14.0" prefHeight="505.0" prefWidth="800.0">
+         <children>
+            <Label layoutX="91.0" layoutY="64.0" text="" textFill="#6f6a6a">
+               <font>
+                  <Font name="Berlin Sans FB" size="16.0" />
+               </font>
+            </Label>
+            <ImageView fitHeight="360.0" fitWidth="358.0" layoutX="22.0" layoutY="71.0" pickOnBounds="true" smooth="false">
+               <image>
+                  <Image url="@../images/man.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="134.0" fitWidth="205.0" layoutX="509.0" layoutY="20.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../images/logo.PNG" />
+               </image>
+            </ImageView>
+            <HBox alignment="CENTER_RIGHT" layoutX="486.0" layoutY="169.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="35.0" prefWidth="260.0" style="-fx-background-color: transparent; -fx-border-color: #E1E1E1; -fx-border-radius: 50px;">
+               <children>
+                  <TextField fx:id="SignupName" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="35.0" prefWidth="221.0" promptText="Enter your Name" style="-fx-background-color: transparent;" />
+               </children>
+               <padding>
+                  <Insets right="10.0" />
+               </padding>
+            </HBox>
+            <HBox alignment="CENTER_RIGHT" layoutX="486.0" layoutY="217.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="35.0" prefWidth="260.0" style="-fx-background-color: transparent; -fx-border-color: #E1E1E1; -fx-border-radius: 50px;">
+               <padding>
+                  <Insets right="10.0" />
+               </padding>
+               <children>
+                  <TextField fx:id="SignupNumber" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="35.0" prefWidth="221.0" promptText="Enter your Student Number" style="-fx-background-color: transparent;" />
+               </children>
+            </HBox>
+            <HBox alignment="CENTER_RIGHT" layoutX="486.0" layoutY="259.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="35.0" prefWidth="260.0" style="-fx-background-color: transparent; -fx-border-color: #E1E1E1; -fx-border-radius: 50px;">
+               <padding>
+                  <Insets right="10.0" />
+               </padding>
+               <children>
+                  <TextField fx:id="SignupId" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="35.0" prefWidth="221.0" promptText="Enter your ID" style="-fx-background-color: transparent;" />
+               </children>
+            </HBox>
+            <HBox alignment="CENTER_RIGHT" layoutX="486.0" layoutY="307.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="35.0" prefWidth="260.0" style="-fx-background-color: transparent; -fx-border-color: #E1E1E1; -fx-border-radius: 50px;">
+               <children>
+                  <PasswordField fx:id="SignupPw" prefHeight="35.0" prefWidth="218.0" promptText="Enter Your Password" style="-fx-background-color: transparent;" />
+               </children>
+               <padding>
+                  <Insets right="10.0" />
+               </padding>
+            </HBox>
+            <JFXButton fx:id="Submit" layoutX="488.0" layoutY="357.0" minHeight="-Infinity" minWidth="-Infinity" onAction="#handleButtonAction" prefHeight="35.0" prefWidth="260.0" style="-fx-background-color: #FFCBA9; -fx-background-radius: 50px;" text="Submit">
+               <font>
+                  <Font name="Consolas Bold" size="12.0" />
+               </font>
+            </JFXButton>
+            <JFXButton fx:id="BackBtn" layoutX="487.0" layoutY="421.0" minHeight="-Infinity" minWidth="-Infinity" onAction="#handleButtonAction" prefHeight="35.0" prefWidth="260.0" style="-fx-background-color: #FF9933; -fx-background-radius: 50px;" text="Back To Main" textFill="WHITE">
+               <font>
+                  <Font name="Consolas Bold" size="12.0" />
+               </font>
+            </JFXButton>
+            <Separator layoutX="479.0" layoutY="405.0" prefHeight="7.0" prefWidth="275.0" />
+            <Label alignment="CENTER" layoutX="601.0" layoutY="397.0" prefHeight="23.0" prefWidth="31.0" style="-fx-background-color: #fff;" text="Or" textFill="#5b5a5a">
+               <font>
+                  <Font name="Segoe UI" size="12.0" />
+               </font>
+            </Label>
+         </children>
+      </Pane>
+      <HBox layoutX="8.0" layoutY="8.0" spacing="5.0">
+         <children>
+            <Circle fx:id="btnClose" fill="#fc5d57" onMouseClicked="#handleMouseEvent" radius="6.0" stroke="WHITE" strokeType="INSIDE" />
+            <Circle fill="#fdbb2d" radius="6.0" stroke="WHITE" strokeType="INSIDE" />
+            <Circle fill="#27c941" radius="6.0" stroke="WHITE" strokeType="INSIDE" />
+         </children>
+      </HBox>
+   </children>
+</AnchorPane>
