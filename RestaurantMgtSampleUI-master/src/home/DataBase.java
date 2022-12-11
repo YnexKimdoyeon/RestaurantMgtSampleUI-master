@@ -1,7 +1,6 @@
 package home;
 import java.util.ArrayList;
 import java.sql.*;
-import java.util.List;
 
 public class DataBase {
     Connection con;
