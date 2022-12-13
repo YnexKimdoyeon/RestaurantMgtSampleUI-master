@@ -12,7 +12,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.web.WebView?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="576.0" prefWidth="1036.0" style="-fx-background-color: #fff;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="home.MainViewController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="817.0" prefWidth="1260.0" style="-fx-background-color: #fff;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="home.MainViewController">
    <children>
       <VBox alignment="TOP_CENTER" prefHeight="576.0" prefWidth="256.0" style="-fx-background-color: #EBE8F9;" AnchorPane.bottomAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
@@ -101,14 +101,14 @@
             <Font size="24.0" />
          </font>
       </Label>
-      <VBox layoutX="275.0" layoutY="97.0" prefHeight="465.0" prefWidth="744.0" spacing="10.0">
+      <VBox layoutX="256.0" layoutY="73.0" prefHeight="691.0" prefWidth="991.0" spacing="10.0">
          <children>
-            <HBox minHeight="26.0" prefHeight="26.0" prefWidth="1004.0" spacing="10.0">
+            <HBox minHeight="26.0" prefHeight="26.0" prefWidth="1015.0" spacing="10.0">
                <children>
                   <Button fx:id="btnBack" minHeight="26.0" minWidth="35.0" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="26.0" prefWidth="64.0" text="Back" />
                </children>
             </HBox>
-            <WebView fx:id="MyView" prefHeight="390.0" prefWidth="428.0" />
+            <WebView fx:id="MyView" prefHeight="656.0" prefWidth="988.0" />
          </children>
       </VBox>
       <HBox layoutX="18.0" layoutY="18.0" spacing="5.0">

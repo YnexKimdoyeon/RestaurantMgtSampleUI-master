@@ -31,6 +31,31 @@ public class DataBase {
 
     }
 
+    int signup(String Name , String StudentNumber, String Id, String Password){
+        String sql = "select id From account.profile where id = ?";
+        try{
+            pstmt = con.prepareStatement(sql);
+            pstmt.setString(1,Id);
+            rs = pstmt.executeQuery();
+            String GoSignup = String.format("INSERT INTO account.profile VALUES ('%s' , '%s', '%s', '%s')" , Name , StudentNumber , Id , Password);
+            Statement stmt = con.createStatement();
+            stmt.executeUpdate(GoSignup);
+
+            String DbCreate = String.format("CREATE table userschedule.%s (UserData VARCHAR(30));" , Id);
+            stmt = con.createStatement();
+            stmt.executeUpdate(DbCreate);
+            con.close();
+            rs.close();
+            new AlterController("회원가입 완료");
+            return 1;
+
+        }
+        catch (Exception e){
+            new AlterController("이미 회원가입된 정보가 존재합니다");
+            return -1;
+        }
+    }
+
     public int login(String name , String number ,String userID, String userPassword) throws SQLException {
         String SQL = "SELECT * FROM account.profile WHERE id = ?";
         try {
@@ -100,31 +125,6 @@ public class DataBase {
         return ListRoom;
     }
 
-
-    int signup(String Name , String StudentNumber, String Id, String Password){
-        String sql = "select id From account.profile where id = ?";
-        try{
-            pstmt = con.prepareStatement(sql);
-            pstmt.setString(1,Id);
-            rs = pstmt.executeQuery();
-            String GoSignup = String.format("INSERT INTO account.profile VALUES ('%s' , '%s', '%s', '%s')" , Name , StudentNumber , Id , Password);
-            Statement stmt = con.createStatement();
-            stmt.executeUpdate(GoSignup);
-
-            String DbCreate = String.format("CREATE table userschedule.%s (UserData VARCHAR(30));" , Id);
-            stmt = con.createStatement();
-            stmt.executeUpdate(DbCreate);
-            con.close();
-            rs.close();
-            new AlterController("회원가입 완료");
-            return 1;
-
-        }
-        catch (Exception e){
-            new AlterController("이미 회원가입된 정보가 존재합니다");
-            return -1;
-        }
-    }
     public ArrayList<String> PrintRoom(String place){ //받을것 : 요일 , 시간 , 관?
         String sql = "select * from schedule." + place;
         ArrayList<String> Room = new ArrayList<>();

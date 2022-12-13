@@ -29,21 +29,21 @@ public class LoginController {
     @FXML
     private void handleButtonAction(ActionEvent event) throws Exception {
         if (event.getSource() == LogInBtn) {
-//            if (login_name.getText().isEmpty() || login_number.getText().isEmpty() || login_id.getText().isEmpty() || login_pw.getText().isEmpty()) {
-//                new AlterController("값이 모두 채워지지 않았습니다.");
-//            }
-//            else{
-//                DataBase Db = new DataBase();
-//                if (Db.login(login_name.getText() , login_number.getText() ,login_id.getText() , login_pw.getText()) == 1){
-//                    Session.setUsername(login_name.getText());
-//                    Session.setUserId(login_id.getText());
+            if (login_name.getText().isEmpty() || login_number.getText().isEmpty() || login_id.getText().isEmpty() || login_pw.getText().isEmpty()) {
+                new AlterController("값이 모두 채워지지 않았습니다.");
+            }
+            else{
+                DataBase Db = new DataBase();
+                if (Db.login(login_name.getText() , login_number.getText() ,login_id.getText() , login_pw.getText()) == 1){
+                    Session.setUsername(login_name.getText());
+                    Session.setUserId(login_id.getText());
                     new FxmlController().Show("../MyFxml/Home.fxml");
-//                }
-//                else{
-//                    new AlterController("해당하는 정보를 가진 아이디가 존재하지 않습니다.");
+                }
+                else{
+                    new AlterController("해당하는 정보를 가진 아이디가 존재하지 않습니다.");
 
-//                }
-//            }
+                }
+            }
         }
         if(event.getSource() == SignUp) {
             new FxmlController().Show("../MyFxml/SignUp.fxml");

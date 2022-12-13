@@ -8,7 +8,6 @@ import static home.Main.mainStage;
 
 public class FxmlController {
     private double x, y;
-
     public void Show(String Data) throws Exception {
         Stage primaryStage = mainStage;
         FXMLLoader loader = new FXMLLoader(getClass().getResource(Data));
